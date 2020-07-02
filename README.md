@@ -93,6 +93,21 @@ i derived some features from questions like no of common words, word share and s
 | Linear SVM  |  BF + AF + DF + AVG-W2V  | 0.394458  |
 | XGBoost  | BF + AF + DF + AVG-W2V  | 0.313341  |
 
+### Deep Learning Siamese Network with Glove/Bert Embeddings
+- **Why the Siamese network?** A siamese network is when two different inputs go through the exact same neural network and finally the end-feature vectors that come out of them are merged or compared. In face recognition, a siamese network is often used to tell if two face pictures are of the same person or different persons. Here, once we'll have embeddings of the text, we could use a similar approach.
+- Each sentence is first tokenized and mapped to its numeric index so each question is represented as word vectors that is padded to be 'c' word long. Then it is fed into model for learning which learns high level representations in the subsequent layers and makes use of those higher level features to perform the final classification (duplicate or not).
+- ***Embedding Layer:*** We tried two different type of embedding:
+    - Glove Embedding as our initial word embeddings. GloVe is a context-free model which generates a single word embedding for each individual word. We experimented with 50, 100, 300 dimension vectors and found 300 dimensions to produce the best results. We used Spacy which has in-built GloVe embeddings dataset called ”en core web sm” with 300 dimension vectors, this is the most used word to vector embeddings with a lot of common words used in human text, this makes it ideal for our dataset of questions asked by humans.
+    - We also used BERT [12]: Deep Bidirectional Transformers for Language Understanding [13] which is also a contextual model which generates a representation of each word that is based on the other words in the sentence thus capturing the relationship in a bi-directional way. These embeddings are useful for semantic search and information retrieval, thus making it ideal for our task of determining duplicate questions. These vectors are high quality feature inputs to downstream models. BERT has several advantages over GloVe in the sense that BERT can capture polysemy, this context-informed word embeddings capture more accurate feature representations, which resulted in better model performance.
+[Siamese Network Architecture](Images/SiameseNetwork.jpeg)
+
+| Model         | Features Used | Log Loss | Precision | Recall | Accuracy |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| Siamese Network  | Glove Embeddings  | 0.29568 | 88.32 | 89.3 | 86.4
+| Siamese Network  | Bert Embeddings  | 0.27761 | 88.6 | 86.4 | 91.7
+
+
+
 ##### References:
 1. https://www.kaggle.com/c/quora-question-pairs 
 2. https://www.kaggle.com/c/quora-question-pairs/discussion
