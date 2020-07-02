@@ -107,7 +107,7 @@ For below table BF - Basic features, AF - Advanced features, DF - Distance Featu
 | Siamese Network  | Glove Embeddings  | 0.29568 | 88.32 | 89.3 | 86.4
 | Siamese Network  | Bert Embeddings  | 0.27761 | 88.6 | 86.4 | 91.7
 
-
+Please check full analysis, conclusion and future work [here](https://github.com/mohitnihalani/QuoraQuestionPairsBert/blob/master/NLP_TERM_PROJECT_PAPER.pdf)
 
 ##### References:
 1. https://www.kaggle.com/c/quora-question-pairs 
@@ -115,4 +115,7 @@ For below table BF - Basic features, AF - Advanced features, DF - Distance Featu
 3. Applied AI Course
 4. https://github.com/seatgeek/fuzzywuzzy#usage , https://chairnerd.seatgeek.com/fuzzywuzzy-fuzzy-string-matching-in-python/
 5. http://proceedings.mlr.press/v37/kusnerb15.pdf
+6. Jacob Devlin and Ming-Wei Chang and Kenton Lee and Kristina Toutanova (2018). BERT: Pre-training of Deep Bidirectional Transformers for Language UnderstandingCoRR, abs/1810.04805. [14] Radim Rehurek, Petr Sojka (2010). Software Framework for Topic Modelling with Large Corpora. In Proceedings of the LREC 2010 Workshop on New Challenges for NLP Frameworks (pp. 45–50). ELRA.
+7. Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Clement Delangue, Anthony Moi, Pierric Cistac, Tim Rault, R’emi Louf, Morgan Funtowicz, Jamie Brew (2019). HuggingFace’s Transformers: State-of-the-art Natural Language ProcessingArXiv, abs/1910.03771.
+8. Jeffrey Pennington, Richard Socher, Christopher D. Manning (2014). Glove: Global vectors for word representation. In In EMNLP.
 
